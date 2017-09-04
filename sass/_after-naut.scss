@@ -164,8 +164,10 @@
 .commentarea .menuarea .toggle a, .help-hoverable, .commentarea .menuarea span.dropdown-title.lightdrop {
     color: #363636;
 }
-/* --- Addon: Rotate thumbnails on hover; by Michael Writhe --- */
-.thumbnail {
+/* --- Addon: Rotate defaul thumbnails on hover; by Michael Writhe --- */
+.over18.link .thumbnail, 
+.thumbnail.self, 
+.thumbnail.default {
     -webkit-transform: rotate(-10deg);
     -moz-transform: rotate(-10deg);
     -o-transform: rotate(-10deg);
@@ -177,7 +179,9 @@
       -ms-transition: all 0.5s ease;
           transition: all 0.5s ease;
 }
-.thumbnail:hover {
+.over18.link .thumbnail:hover, 
+.thumbnail.self:hover, 
+.thumbnail.default:hover {
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -185,6 +189,4 @@
       transform: rotate(0deg);
 
 }
-
 /* --- End Addon --- */
-
