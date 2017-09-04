@@ -55,6 +55,13 @@ if (target === false) {
   process.exit(0);
 } else {
   console.log(`Applying to subreddit ${target}...`);
+  console.log({
+    userAgent: process.env.REDDIT_USER_AGENT,
+    clientId: process.env.REDDIT_ID,
+    clientSecret: process.env.REDDIT_SECRET,
+    username: process.env.REDDIT_USERNAME,
+    password: process.env.REDDIT_PASSWORD
+  });
   const r = new Snoowrap({
     userAgent: process.env.REDDIT_USER_AGENT,
     clientId: process.env.REDDIT_ID,
