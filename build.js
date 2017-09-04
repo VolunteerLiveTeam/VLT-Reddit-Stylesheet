@@ -84,9 +84,12 @@ if (target === false) {
     console.log(`Updating files ${files.join(", ")}`);
     return Promise.all(
       files.map(file => {
+        if (!fs.existsSync(__dirname + "/" + file)) {
+          return Promise.resolve(); // Deleted file
+        }
         return r.getSubreddit(target).uploadStylesheetImage({
           name: file.replace(/[\\/]?img[\\/]/i, ""),
-          file,
+          file: __dirname + "/" + file,
           imageType: /^.+\.([^.]+)$/.exec(file)[1]
         });
       })
