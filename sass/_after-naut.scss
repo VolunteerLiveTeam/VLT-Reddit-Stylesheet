@@ -109,22 +109,23 @@
     color: #CF2F2F;
 }
 
+$linkflair-sticky-colors: (
+    "info": #009148,
+    "announcement": #D95D00,
+    "live": #870706,
+    "twitter": #0684BA
+);
+
 .thing.stickied {
     background-color: #9A2B2B !important;
 }
-.thing.stickied.linkflair-info {
-    background-color: #009148 !important;
+
+@each $name, $color in $linkflair-sticky-colors {
+    .thing.stickied.linkflair-#{$name}, .thing.stickied.linkflair-#{$name} .RES-keyNav-activeElement, .thing.stickied.linkflair-#{$name} .RES-keyNav-activeElement .md-container {
+        background-color: $color;
+    }
 }
-.thing.stickied.linkflair-announcement {
-    background-color: #D95D00 !important;
-}
-.thing.stickied.linkflair-live {
-    background-color: #870706 !important;
-}
-.thing.stickied.linkflair-twitter {
-    background-color: #0684BA !important;
-}
-.thing.stickied.comment, .thing.stickied .RES-keyNav-activeElement, .thing.stickied .RES-keyNav-activeElement .md-container, .thing.stickied.comment .new-comment .usertext-body, .thing.stickied.comment .usertext-body.may-blank-within.md-container {
+.thing.stickied.comment, .thing.stickied.comment .new-comment .usertext-body, .thing.stickied.comment .usertext-body.may-blank-within.md-container {
     background-color: #009148 !important;
 }
 .thing.stickied.comment .child .RES-keyNav-activeElement .md-container, .thing.stickied.comment .child .new-comment .usertext-body, .thing.stickied.comment .child .usertext-body.may-blank-within.md-container {
