@@ -10,6 +10,7 @@
     "clean-css": "^4.1.8",
     "imgur": "^0.2.1",
     "node-sass": "^4.5.3",
+    "puppeteer": "^0.10.2",
     "snoowrap": "^1.14.2"
   }
 }

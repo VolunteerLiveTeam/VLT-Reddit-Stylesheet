@@ -4,7 +4,7 @@ const util = require('util');
 
 imgur.setClientId(process.env.IMGUR_CLIENT_ID);
 
-const IMAGES = ['hot', 'link', 'text', 'sticky', 'wiki'];
+const IMAGES = Object.keys(require("./screenshotPages.json"));
 
 Promise.all(IMAGES.map(slug => {
     const diff = new BlinkDiff({
@@ -38,7 +38,7 @@ Promise.all(IMAGES.map(slug => {
     })).then(() => {
         const output = `| Type | Before | After | Diff |
 |------|--------|-------|------|
-${Object.keys(urls).map(type => `| ${type} | ${urls[type].before} | ${type} | ${urls[type].after} | ${type} | ${urls[type].diff}`).join('\n')}
+${Object.keys(urls).map(type => `| ${type} | ${urls[type].before} | ${urls[type].after} | ${urls[type].diff}`).join('\n')}
         `;
         // TODO post to github
         console.log(output);

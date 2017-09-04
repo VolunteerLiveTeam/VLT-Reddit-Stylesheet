@@ -2,32 +2,11 @@ language: node_js
 dist: trusty
 node_js:
 - '8'
-addons:
-  chrome: stable
 cache: yarn
-before_script:
-- google-chrome-stable --headless --disable-gpu --screenshot --window-size=1920,1800 https://www.reddit.com/r/VolunteerTestTeam/
-  && mv screenshot.png screenshot-before-hot.png
-- google-chrome-stable --headless --disable-gpu --screenshot --window-size=1920,1800 https://www.reddit.com/r/VolunteerTestTeam/comments/6xwjcw/no_flair/
-  && mv screenshot.png screenshot-before-link.png
-- google-chrome-stable --headless --disable-gpu --screenshot --window-size=1920,1800 https://www.reddit.com/r/VolunteerTestTeam/comments/6xw2pl/test_fancy_new_userflair/
-  && mv screenshot.png screenshot-before-text.png
-- google-chrome-stable --headless --disable-gpu --screenshot --window-size=1920,1800 https://www.reddit.com/r/VolunteerTestTeam/comments/6y1pm1/stickedystick_text_post/
-  && mv screenshot.png screenshot-before-sticky.png
-- google-chrome-stable --headless --disable-gpu --screenshot --window-size=1920,1800 https://www.reddit.com/r/VolunteerTestTeam/wiki/index
-  && mv screenshot.png screenshot-before-wiki.png
+before_script: node screenshots.js before
 script: node build.js
 after_success:
-- google-chrome-stable --headless --disable-gpu --screenshot --window-size=1920,1800 https://www.reddit.com/r/VolunteerTestTeam/
-  && mv screenshot.png screenshot-after-hot.png
-- google-chrome-stable --headless --disable-gpu --screenshot --window-size=1920,1800 https://www.reddit.com/r/VolunteerTestTeam/comments/6xwjcw/no_flair/
-  && mv screenshot.png screenshot-after-link.png
-- google-chrome-stable --headless --disable-gpu --screenshot --window-size=1920,1800 https://www.reddit.com/r/VolunteerTestTeam/comments/6xw2pl/test_fancy_new_userflair/
-  && mv screenshot.png screenshot-after-text.png
-- google-chrome-stable --headless --disable-gpu --screenshot --window-size=1920,1800 https://www.reddit.com/r/VolunteerTestTeam/comments/6y1pm1/stickedystick_text_post/
-  && mv screenshot.png screenshot-after-sticky.png
-- google-chrome-stable --headless --disable-gpu --screenshot --window-size=1920,1800 https://www.reddit.com/r/VolunteerTestTeam/wiki/index
-  && mv screenshot.png screenshot-after-wiki.png
+- node screenshots.js after
 - node diff.js
 env:
   global:
