@@ -47,6 +47,8 @@ try {
   process.exit(1);
 }
 
+minified = minified.replace(`@charset "UTF-8";`, `/* Last modified ${new Date().toLocaleString()} */`);
+
 if (target === false) {
   console.log("Not running on CI; skipping applying to Reddit");
   fs.writeFileSync(__dirname + "/build.css", minified);

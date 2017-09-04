@@ -1,8 +1,11 @@
 language: node_js
 dist: trusty
 node_js:
- - "8"
+- '8'
 addons:
   chrome: stable
 cache: yarn
 script: node build.js
+env:
+  global:
+    secure: jaW+OJslgd+vUHZEzF01hqy4akOIICONBAU4nOPA1VZrt7lKCDo5IgNQTEp6X+xQpeKaOpRmpUZauCrd0bN+dHxD0X71J7pcVB6a4sJ7M+19M7ySCXt89d78IerHRh+YoubhxLvX3J6xrc6tRCATkaeoXvZ1KFozkFc5KsKN+62ccSL7lxyRuxUwDqX/z8BoufPGN5zlgZp95/ztaBkSiLPKz+wapX69wkdLdSAD7RU21zMeUwUCtsMIaJEIYm668Q+jWSYRxcmCjgnMq6xqIe6yCljwVkBxHuQtJ+TlXu79h8CtJhAY4xfUyfEiSCOOPwQfIQtFi+gANU5Lu3jmYBOfbwHZxEvXs3M0aeRx8tNWhOR1eRUedqiJwBcmVs+HRTvcC05tpkRrc4eWTHV2jvT5pRmBmRmbO29+RINKRFetCaUDgq9FLexODUgKGoigu0CEfq6bJQf9vRsMWllZmxRlt/emMt1cE9J+3vtkUQegobc10g/8E50Wjzc/R+NbAGugBtPvvinaIfWtLpW2su96g1exsnI/dz6/ZiXJ4O9JOuJX3gzHBAF5K5wLSxL7qmk2NfAYGLtKQLb1T3AM2xC5ZiBLgcg/2M4+J40fm4jzl3YSyIpDqRe91SNOeaz5ez5PVMZgPqFarJw9CC5Q689CqPpspV66mecM+u7djpM=
