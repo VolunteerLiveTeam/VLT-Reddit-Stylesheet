@@ -55,13 +55,14 @@ if (target === false) {
   process.exit(0);
 } else {
   console.log(`Applying to subreddit ${target}...`);
-  const r = new Snoowrap({
+  const options = {
     userAgent: process.env.REDDIT_USER_AGENT,
     clientId: process.env.REDDIT_ID,
     clientSecret: process.env.REDDIT_SECRET,
     username: process.env.REDDIT_USERNAME,
     password: process.env.REDDIT_PASSWORD
-  });
+  };
+  const r = new Snoowrap(options);
 
   let reason = "";
   if (process.env.TRAVIS_PULL_REQUEST !== "false") {
