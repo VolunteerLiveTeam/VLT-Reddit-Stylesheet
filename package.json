@@ -1,0 +1,13 @@
+{
+  "name": "vlt-css",
+  "version": "1.0.0",
+  "description": "VLT CSS",
+  "main": "index.js",
+  "author": "@VolunteerLiveTeam",
+  "license": "MIT",
+  "dependencies": {
+    "clean-css": "^4.1.8",
+    "node-sass": "^4.5.3",
+    "snoowrap": "^1.14.2"
+  }
+}

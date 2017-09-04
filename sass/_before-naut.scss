@@ -1,0 +1,49 @@
+/*Smaller VLT Page Title*/
+#header .pagename a {
+    font-size: 32px!important;
+}
+
+
+/* Main Page Background */
+body {
+ background:
+    url(%%bg%%) center/cover!important;
+
+}
+
+
+/* Modmail Hover Button */
+
+a[title="hoverbutton"] {
+    position: absolute;
+    display: block!important;
+    width: 320px!important;
+    height: 35px!important;
+    line-height: 17px!important;
+    font-weight: 700!important;
+    border: 3px solid #424242;
+    padding: 5px!important;
+    right: 17px;
+    top: 468px;
+    z-index: 99;
+
+}
+
+.titlebox {
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 936px) {
+    a[title="hoverbutton"] {
+        visibility: hidden;
+    }
+}
+
+a[title="facebook"] {
+    background-color: #3b5998 !important;
+}
+
+a[title="twitter"] {
+    background-color: #1DA1F2 !important;
+}
+

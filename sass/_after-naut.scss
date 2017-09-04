@@ -1,0 +1,388 @@
+/* Addon: Custom Colors */
+/* Buttons */
+
+
+
+.morelink, .side .titlebox .md h3 a, .drop-choices a.choice:hover, .submit-page #newlink.submit.content ul.tabmenu.formtab,
+.submit_text.enabled.roundfield, body .btn, body button, .content .infobar {
+    background-color: #424242;
+}
+
+    .morelink:hover, .side .titlebox .md h3 a:hover, .btn:hover, body button:hover {
+        background-color: #727272;
+    }
+
+    .morelink:active, .side .titlebox .md h3 a:active, .btn:active, body button:active {
+        background-color: #727272;
+    }
+
+
+
+
+/* RED BUTTON BACKUP
+
+
+
+.morelink, .side .titlebox .md h3 a, .drop-choices a.choice:hover, .submit-page #newlink.submit.content ul.tabmenu.formtab,
+.submit_text.enabled.roundfield, body .btn, body button, .content .infobar {
+    background-color: #BD1F1F;
+}
+
+    .morelink:hover, .side .titlebox .md h3 a:hover, .btn:hover, body button:hover {
+        background-color: #E80C0C;
+    }
+
+    .morelink:active, .side .titlebox .md h3 a:active, .btn:active, body button:active {
+        background-color: #E80C0C;
+    }
+
+
+
+*/
+
+
+/* Links */
+.thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title, .link .entry .buttons li a.comments,
+.link .entry .buttons li a.flairselectbtn, .link .entry .buttons li a:hover, .titlebox .tagline a.flairselectbtn, .md a,
+.side .titlebox .md h4 a, .wiki-page .wiki-page-content .md.wiki h4, .sidebox.create .morelink a, a, .side:after, .usertext .bottom-area a.reddiquette,
+.wiki-page .pageactions .wikiaction-current, .tagline .submitter, .combined-search-page .search-result .search-result-header .search-title,
+.combined-search-page .search-result a, .combined-search-page .search-result a > mark, .combined-search-page .search-result .search-comments,
+.flairselector h2, .linefield .title, body .content .sitetable .link .title a:hover, .link .entry .tagline a:hover, .comment .author:hover {
+    color: #BD1F1F;
+}
+/* End Addon */
+
+
+
+
+
+/* --- Addon: Linkflair Example --- */
+
+
+.stickied .thumbnail {
+    background-color: #ad2d2c;
+    background: url(%%ancmt-thumb%%);
+}
+
+
+
+.linkflair-info .linkflairlabel {
+    background-color: #1BB76E;
+}
+
+.linkflair-info .thumbnail {
+    background-color: #1BB76E;
+    background: url(%%Info-Flair-green%%);
+}
+
+
+
+.linkflair-announcement .linkflairlabel {
+    background-color: #ff8300;
+}
+
+.linkflair-announcement .thumbnail {
+    background: url(%%ancmt-thumb-orng%%);
+}
+
+
+
+.linkflair-live .thumbnail {
+    background-color: #ad2d2c;
+    background: url(%%LT-Flair%%);	
+}
+
+.linkflair-live .linkflairlabel {
+    background-color: #ad2d2c; 
+}
+
+.linkflair-twitter .thumbnail {
+    background-color: #2CAAE0;
+    background: url(%%twitter-thumb%%);	
+}
+
+.linkflair-twitter .linkflairlabel {
+    background-color: #2CAAE0; 
+}
+
+
+
+
+
+
+/* The comments page of a submission with a linkflair has an additional body class named "post-linkflair-..."
+	Through this class you can style pages that only have that linkflair. This is very cool to use when you have
+	special posts, such as AMA's. */
+
+/* You can use a different header or subreddit info image for example: */
+
+/* --- End Addon --- */
+
+
+/* --- Modmail button in header banner? With not fixed yet.
+ --- */
+
+.side .md [href="//#"] {
+    position: absolute;
+    width: 50px;
+    top: 30px;
+    right:10px;
+    background: #fff;
+    z-index: 99;
+}
+
+
+/* ---  [Sidebarimglink](www.reddit.com)
+
+.side .md a[href*='www.reddit.com'] {
+    border-radius: 2px;
+    display: block;
+    font-size: 0;
+    height: 192px;
+    position: absolute;
+    right: 16px;
+    top: 80px;
+    z-index: 1;
+    width: 320px;
+    -webkit-transition: none !important;
+    transition: none !important;
+}
+
+
+--- */
+
+
+
+
+
+
+
+
+
+
+@-webkit-keyframes parrot {
+    from { background-position: 0 0; }
+    to   { background-position: 0 -2400px; }
+}
+@keyframes parrot {
+    from { background-position: 0 0; }
+    to   { background-position: 0 -2400px; }
+}
+.md [href$="parrot"]{display:inline-block;width:30px;height:35px}
+.md [href$="parrot"]:before{background:url(%%parrotsprite%%); display:inline-block; height:35px; width:30px; -webkit-animation: parrot 3s steps(60) infinite; animation: parrot 3s steps(60) infinite;position:absolute;content:""}
+.md [href*="/r/"],.md [href*="wiki"]{display:inline}
+.md [href*="/r/"]:before,.md [href*="wiki"]:before{display:none}
+.md [href="#shuffleparrot"]:before{width:75px;clip:rect(0,75px,30px,40px);margin-left:-40px}
+.md [href="#congaparrot"]:before{width:115px;clip:rect(0,115px,30px,80px);margin-left:-80px}
+.md [href="#aussieparrot"]:before{width:155px;clip:rect(0,155px,30px,120px);margin-left:-120px}
+.md [href="#aussiecongaparrot"]:before{width:195px;clip:rect(0,195px,30px,160px);margin-left:-160px}
+.md [href="#sadparrot"]:before{width:235px;clip:rect(0,235px,30px,200px);margin-left:-200px}
+.md [href="#shootingparrot"]:before{width:275px;clip:rect(0,275px,30px,240px);margin-left:-240px}
+.md [href="#ledootparrot"]:before{width:315px;clip:rect(0,315px,30px,280px);margin-left:-280px}
+.md [href="#popcornparrot"]:before{width:355px;clip:rect(0,355px,30px,320px);margin-left:-320px}
+.md [href="#dealwithitparrot"]:before{width:395px;clip:rect(0,395px,30px,360px);margin-left:-360px}
+.md [href="#explodeparrot"]:before{width:435px;clip:rect(0,435px,30px,400px);margin-left:-400px}
+.md [href="#runningparrot"]:before{width:475px;clip:rect(0,475px,30px,440px);margin-left:-440px}
+.md [href="#footballparrot"]:before{width:515px;clip:rect(0,515px,30px,480px);margin-left:-480px}
+.md [href="#chillparrot"]:before{width:555px;clip:rect(0,555px,30px,520px);margin-left:-520px}
+.md [href="#shufflefurtherparrot"]:before{width:595px;clip:rect(0,595px,30px,560px);margin-left:-560px}
+.md [href="#vikingparrot"]:before{width:635px;clip:rect(0,635px,30px,600px);margin-left:-600px}
+.md [href="#gildedparrot"]:before{width:675px;clip:rect(0,675px,30px,640px);margin-left:-640px}
+.md [href="#freedomparrot"]:before{width:715px;clip:rect(0,715px,30px,680px);margin-left:-680px}
+.md [href="#youtubeparrot"]:before{width:755px;clip:rect(0,755px,30px,720px);margin-left:-720px}
+.md [href="#middleparrot"]:before{width:795px;clip:rect(0,795px,30px,760px);margin-left:-760px}
+.md [href="#fiestaparrot"]:before{width:835px;clip:rect(0,835px,30px,800px);margin-left:-800px}
+.md [href="#cakedayparrot"]:before{width:875px;clip:rect(0,875px,30px,840px);margin-left:-840px}
+.md [href="#copparrot"]:before{width:915px;clip:rect(0,915px,30px,880px);margin-left:-880px}
+.md [href="#rightparrot"]:before{width:955px;clip:rect(0,955px,30px,920px);margin-left:-920px}
+.md [href="#shadesparrot"]:before{width:995px;clip:rect(0,995px,30px,960px);margin-left:-960px}
+.md [href="#upvoteparrot"]:before{width:1035px;clip:rect(0,1035px,30px,1000px);margin-left:-1000px}
+.md [href="#downvoteparrot"]:before{width:1075px;clip:rect(0,1075px,30px,1040px);margin-left:-1040px}
+.md [href="#scottishparrot"]:before{width:1115px;clip:rect(0,1115px,30px,1080px);margin-left:-1080px}
+.md [href="#loveparrot"]:before{width:1155px;clip:rect(0,1155px,30px,1120px);margin-left:-1120px}
+.md [href="#trumpparrot"]:before{width:1195px;clip:rect(0,1195px,30px,1160px);margin-left:-1160px}
+.md [href="#oldtimeyparrot"]:before{width:1235px;clip:rect(0,1235px,30px,1200px);margin-left:-1200px}
+.md [href="#reversecongaparrot"]:before{width:1275px;clip:rect(0,1275px,30px,1240px);margin-left:-1240px}
+.md [href="#aussiereversecongaparrot"]:before{width:1315px;clip:rect(0,1315px,30px,1280px);margin-left:-1280px}
+.md [href="#upcongaparrot"]:before{width:1355px;clip:rect(0,1355px,30px,1320px);margin-left:-1320px}
+.md [href="#downcongaparrot"]:before{width:1395px;clip:rect(0,1395px,30px,1360px);margin-left:-1360px}
+.md [href="#haloparrot"]:before{width:1435px;clip:rect(0,1435px,30px,1400px);margin-left:-1400px}
+.md [href="#jesterparrot"]:before{width:1475px;clip:rect(0,1475px,30px,1440px);margin-left:-1440px}
+.md [href="#cockarockerparrot"]:before{width:1515px;clip:rect(0,1515px,30px,1480px);margin-left:-1480px}
+.md [href="#angelparrot"]:before{width:1555px;clip:rect(0,1555px,30px,1520px);margin-left:-1520px}
+.md [href="#devilparrot"]:before{width:1595px;clip:rect(0,1595px,30px,1560px);margin-left:-1560px}
+.md [href="#pokemonparrot"]:before{width:1635px;clip:rect(0,1635px,30px,1600px);margin-left:-1600px}
+.md [href="#kparrot"]:before{width:1675px;clip:rect(0,1675px,30px,1640px);margin-left:-1640px}
+.md [href="#fartyparrot"]:before{width:1715px;clip:rect(0,1715px,30px,1680px);margin-left:-1680px}
+.md [href="#brcornerparrot"]:before{width:1755px;clip:rect(0,1755px,30px,1720px);margin-left:-1720px}
+.md [href="#trcornerparrot"]:before{width:1795px;clip:rect(0,1795px,30px,1760px);margin-left:-1760px}
+.md [href="#blcornerparrot"]:before{width:1835px;clip:rect(0,1835px,30px,1800px);margin-left:-1800px}
+.md [href="#tlcornerparrot"]:before{width:1875px;clip:rect(0,1875px,30px,1840px);margin-left:-1840px}
+.md [href="#chuckleparrot"]:before{width:1915px;clip:rect(0,1915px,30px,1880px);margin-left:-1880px}
+.md [href="#fastleftparrot"]:before{-webkit-animation: parrot 1.2s steps(60) infinite; animation: parrot 1.2s steps(60) infinite}
+.md [href="#fastrightparrot"]:before{-webkit-animation: parrot 1.2s steps(60) infinite; animation: parrot 1.2s steps(60) infinite;width:955px;clip:rect(0,955px,40px,920px);margin-left:-920px}
+.md [href="#blankparrot"]:before{background:transparent}
+@-webkit-keyframes parrot10 {
+    from { background-position: 0 0; }
+    to   { background-position: 0 -300px; }
+}
+@keyframes parrot10 {
+    from { background-position: 0 0; }
+    to   { background-position: 0 -300px; }
+}
+.md [href="#commieparrot"]:before, .md [href="#scienceparrot"]:before {
+    background:url(%%parrot10%%);
+    -webkit-animation: parrot10 0.5s steps(10) infinite;
+    animation: parrot10 0.5s steps(10) infinite;
+    background-size: 66px 300px;
+    width: 30px;
+    height: 30px;
+}
+.md [href="#scienceparrot"]:before {width:66px;clip:rect(0,66px,30px,33px);margin-left:-33px}
+
+
+
+
+
+
+
+
+
+
+
+/* --- Add-on: This is a part of the link box.. just spacing stuff i guess?  --- */
+
+
+
+.side .md h4:nth-of-type(1) {
+    list-style-type:none!important;
+    position: absolute;
+    font-size: 14px;
+    display: block;
+    top: 10px; /*Change this in relation to your header's height*/
+    left: -850px; /*adjust this is well*/
+    margin:0;
+    background-color: #f6f7f8!important; /*Change for different background color*/
+    color: #555; /*Change for different text color*/
+    text-align: left;
+    border-radius: 2px;
+    border: 1px solid #dbdbdb;
+    width: auto;
+    padding: 7px 10px 7px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.side .md h4:nth-of-type(1) a {
+    color: rgb(51, 102, 153); /*Changes the colors of the links*/
+}
+
+.content {
+    margin-top:45px!important; /*Increase or decrease depending on how much room you need*/
+}
+
+
+
+/* --- Add-on: LINK BOX BEFORE LISTINGS ON MAIN PAGE --- */
+
+      body.listing-page > .content {margin-top: 66px;}
+
+.side .titlebox .md h5 {
+    display: none;
+}
+
+    .listing-page .side .titlebox .md h5 {
+           display: block;
+           min-width:550px;
+           overflow: hidden;
+           text-overflow: hidden;
+           position: absolute;
+           top: 193px;
+           left: 16px;
+           border-radius: 2px;
+           padding: 0px 15px;
+           background: #BD1F1F;
+           box-shadow:0 1px 4px 0 rgba(0,0,0,0.14);
+           right: 352px;
+           font-size: 13px;
+           height: 35px; line-height: 35px;
+           text-decoration: none;
+           animation-name: fadein;
+           animation-duration: .75s;
+           animation-iteration-count: 1;
+          -webkit-animation-name: fadein;
+          -webkit-animation-duration: .75s;
+          -webkit-animation-iteration-count: 1;
+          }
+
+          .md, .md h5 {font-weight: 400;}
+          .md h5 {border: 0;color: #fff!important}
+           h5 {font-size: 100%;}
+
+
+.flair-vlt-member {
+    color: #CF2F2F;
+    font-weight: 900;
+}
+.stickied .flair-vlt-member {
+    color: #fafafa;
+}
+.stickied.comment .child .flair {
+    color: #CF2F2F;
+}
+
+.thing.stickied {
+    background-color: #9A2B2B !important;
+}
+.thing.stickied.linkflair-info {
+    background-color: #009148 !important;
+}
+.thing.stickied.linkflair-announcement {
+    background-color: #D95D00 !important;
+}
+.thing.stickied.linkflair-live {
+    background-color: #870706 !important; 
+}
+.thing.stickied.linkflair-twitter {
+    background-color: #0684BA !important; 
+}
+.thing.stickied.comment, .thing.stickied.comment .RES-keyNav-activeElement .md-container, .thing.stickied.comment .new-comment .usertext-body, .thing.stickied.comment .usertext-body.may-blank-within.md-container {
+    background-color: #009148 !important;
+}
+.thing.stickied.comment .child .RES-keyNav-activeElement .md-container, .thing.stickied.comment .child .new-comment .usertext-body, .thing.stickied.comment .child .usertext-body.may-blank-within.md-container {
+    background-color: #fff !important;
+}
+.thing.stickied .md {
+    color: #fcfcfc;
+}
+.thing.stickied.comment .child .md {
+    color: #292f34;
+}
+.thing.stickied .entry .tagline, .link.domain a, .tagline.stickied-tagline {
+    color: #ddd;
+}
+.thing.stickied .entry .tagline a {
+    color: #d9d9d9;
+}
+.thing.stickied .child .tagline a, .thing.stickied .child .morecomments {
+    color: #98abba;
+}
+.thing.stickied .morecomments a, .thing.stickied .morecomments a .gray {
+    color: #fafafa !important;
+}
+.thing.stickied .score {
+    color: #e9e9e9
+}
+.thing.stickied .child .score {
+    color: rgb(51, 51, 51);
+}
+.thing.stickied .expando-button {
+    background: #d9d9d9;
+}
+.thing.stickied.comment .child .expando-button {
+    background: transparent;
+}
+
+.commentarea .menuarea .toggle a, .help-hoverable, .commentarea .menuarea span.dropdown-title.lightdrop {
+    color: #363636;
+}
