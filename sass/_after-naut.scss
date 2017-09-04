@@ -122,7 +122,7 @@ $linkflair-sticky-colors: (
 
 @each $name, $color in $linkflair-sticky-colors {
     .thing.stickied.linkflair-#{$name}, .thing.stickied.linkflair-#{$name} .RES-keyNav-activeElement, .thing.stickied.linkflair-#{$name} .RES-keyNav-activeElement .md-container {
-        background-color: $color;
+        background-color: $color !important;
     }
 }
 .thing.stickied.comment, .thing.stickied.comment .new-comment .usertext-body, .thing.stickied.comment .usertext-body.may-blank-within.md-container {

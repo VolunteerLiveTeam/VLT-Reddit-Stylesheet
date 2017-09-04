@@ -61,9 +61,8 @@ try {
   const minifier = new CleanCSS({ returnPromise: false });
   const minifyResult = minifier.minify(resultCss);
   console.log(
-    `Minified: efficiency ${(minifyResult.stats.efficiency * 100).toFixed(
-      2
-    )}%. Output size ${minifyResult.stats.minifiedSize / 1000}KB`
+    // prettier-ignore
+    `Minified: efficiency ${(minifyResult.stats.efficiency * 100).toFixed(2)}%. Output size ${minifyResult.stats.minifiedSize / 1000}KB`
   );
   minified = minifyResult.styles;
 } catch (e) {
