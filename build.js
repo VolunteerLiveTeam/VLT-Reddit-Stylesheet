@@ -26,15 +26,14 @@ if (process.env.CI !== "true") {
 
 let files;
 if (process.env.CI === "true") {
-  const files = child_process
-  .execSync("git diff --name-only --diff-filter=d $TRAVIS_COMMIT_RANGE")
-  .toString()
-  .split("\n")
-  .filter(x => /\.(jpg|png)$/.exec(x));
+  files = child_process
+    .execSync("git diff --name-only --diff-filter=d $TRAVIS_COMMIT_RANGE")
+    .toString()
+    .split("\n")
+    .filter(x => /\.(jpg|png)$/.exec(x));
 } else {
   files = [];
 }
-
 
 console.log("Running Sass...");
 let resultCss;
