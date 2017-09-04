@@ -87,7 +87,7 @@ if (target === false) {
         return r.getSubreddit(target).uploadStylesheetImage({
           name: file.replace(/[\\/]?img[\\/]/i, ""),
           file,
-          imageType: /^\.([^.]+)$/.exec(file)[1]
+          imageType: /^.+\.([^.]+)$/.exec(file)[1]
         });
       })
     );
