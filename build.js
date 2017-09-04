@@ -8,22 +8,14 @@ let target;
 
 if (process.env.CI !== "true") {
   target = false;
-  // prettier-ignore
-} else if (
-  process.env.TRAVIS_PULL_REQUEST !== "false" &&
-  process.env.TRAVIS_BRANCH === "master"
-) {
-  target = "VolunteerPublishTeam";
+} else if (process.env.TRAVIS_BRANCH === "master" && process.env.TRAVIS_PULL_REQUEST === "false") {
+  target = "VolunteerLiveTeam";
 } else {
-  if (process.env.TRAVIS_BRANCH === "master") {
-    target = "VolunteerLiveTeam";
-  } else {
-    target = "VolunteerTestTeam";
-  }
+  target = "VolunteerTestTeam";
 }
 
 const files = child_process
-  .execSync("git diff --name-only $TRAVIS_COMMIT_RANGE")
+  .execSync("git diff --name-only --diff-filter=d $TRAVIS_COMMIT_RANGE")
   .toString()
   .split("\n")
   .filter(x => /\.(jpg|png)$/.exec(x));
@@ -84,12 +76,9 @@ if (target === false) {
     console.log(`Updating files ${files.join(", ")}`);
     return Promise.all(
       files.map(file => {
-        if (!fs.existsSync(__dirname + "/" + file)) {
-          return Promise.resolve(); // Deleted file
-        }
         return r.getSubreddit(target).uploadStylesheetImage({
-          name: file.replace(/[\\/]?img[\\/]/i, ""),
-          file: __dirname + "/" + file,
+          name: file.replace(/[\\/]?img[\\/]/i, "").match(/^(.+)\.[^.]+$/)[1],
+          file: "./" + file,
           imageType: /^.+\.([^.]+)$/.exec(file)[1]
         });
       })
