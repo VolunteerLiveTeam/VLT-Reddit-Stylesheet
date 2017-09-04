@@ -2,7 +2,7 @@ const sass = require("node-sass");
 const CleanCSS = require("clean-css");
 const Snoowrap = require("snoowrap");
 const fs = require("fs");
-const { promisify } = require("util");
+const child_process = require("child_process");
 
 let target;
 
@@ -22,6 +22,10 @@ if (process.env.CI !== "true") {
   }
 }
 
+const files = child_process
+  .execSync("git diff --name-only $TRAVIS_COMMIT_RANGE")
+  .split("\n");
+
 console.log("Running Sass...");
 let resultCss;
 
@@ -40,14 +44,21 @@ let minified;
 try {
   const minifier = new CleanCSS({ returnPromise: false });
   const minifyResult = minifier.minify(resultCss);
-  console.log(`Minified: efficiency ${(minifyResult.stats.efficiency * 100).toFixed(2)}%. Output size ${minifyResult.stats.minifiedSize / 1000}KB`);
+  console.log(
+    `Minified: efficiency ${(minifyResult.stats.efficiency * 100).toFixed(
+      2
+    )}%. Output size ${minifyResult.stats.minifiedSize / 1000}KB`
+  );
   minified = minifyResult.styles;
 } catch (e) {
   console.error(`ERROR in minifier: ${e}`);
   process.exit(1);
 }
 
-minified = minified.replace(`@charset "UTF-8";`, `/* Last modified ${new Date().toLocaleString()} */`);
+minified = minified.replace(
+  `@charset "UTF-8";`,
+  `/* Last modified ${new Date().toLocaleString()} */`
+);
 
 if (target === false) {
   console.log("Not running on CI; skipping applying to Reddit");
@@ -64,27 +75,51 @@ if (target === false) {
   };
   const r = new Snoowrap(options);
 
-  let reason = "";
-  if (process.env.TRAVIS_PULL_REQUEST !== "false") {
-    reason = `GitHub pull request ${process.env.TRAVIS_PULL_REQUEST}`;
-  } else {
-    reason = `GitHub commit ${process.env.TRAVIS_COMMIT}`;
+  async function checkFiles() {
+    if (files.length === 0) {
+      return Promise.resolve();
+    }
+    console.log(`Updating files ${files.join(", ")}`);
+    return Promise.all(
+      files.map(file => {
+        return r.getSubreddit(target).uploadStylesheetImage({
+          name: file.replace(/[\\/]?img[\\/]/i, ""),
+          file,
+          imageType: /^\.([^.]+)$/.exec(file)[1]
+        });
+      })
+    );
   }
 
-  r
-    .getSubreddit(target)
-    .updateStylesheet({
-      css: minified,
-      reason
-    })
-    .then(
-      () => {
-        console.log("Done.");
-        process.exit(0);
-      },
-      e => {
-        console.error(`ERROR in reddit: ${e}`);
-        process.exit(1);
+  checkFiles().then(
+    () => {
+      let reason = "";
+      if (process.env.TRAVIS_PULL_REQUEST !== "false") {
+        reason = `GitHub pull request ${process.env.TRAVIS_PULL_REQUEST}`;
+      } else {
+        reason = `GitHub commit ${process.env.TRAVIS_COMMIT}`;
       }
-    );
+
+      // prettier-ignore
+      r.getSubreddit(target)
+        .updateStylesheet({
+          css: minified,
+          reason
+        })
+        .then(
+          () => {
+            console.log("Done.");
+            process.exit(0);
+          },
+          e => {
+            console.error(`ERROR in reddit: ${e}`);
+            process.exit(1);
+          }
+        );
+    },
+    err => {
+      console.error(`ERROR in file uploading: ${err}`);
+      process.exit(1);
+    }
+  );
 }
