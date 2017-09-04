@@ -116,7 +116,7 @@ $linkflair-sticky-colors: (
     "twitter": #0684BA
 );
 
-.thing.stickied {
+.thing.stickied, .thing.stickied .RES-keyNav-activeElement, .thing.stickied .RES-keyNav-activeElement .md-container {
     background-color: #9A2B2B !important;
 }
 
