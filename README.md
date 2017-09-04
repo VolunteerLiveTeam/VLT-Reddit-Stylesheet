@@ -6,7 +6,7 @@ The stylesheet itself is a customized version of the [Naut theme](https://reddit
 
 ## How It Works
 
-All the source CSS is in the [sass](https://github.com/VolunteerLiveTeam/VLT-Reddit-Stylesheet/tree/dev/sass) folder. Upon a commit to the `dev` branch, Travis CI will build the CSS and apply it to [/r/VolunteerTestTeam](https://reddit.com/r/VolunteerTestTeam). Upon a pull request to `master`, Travis will build the pull request to [/r/VolunteerPublishTeam](https://reddit.com/r/VolunteerPublishTeam) as a final test. Then, when the PR is merged, Travis will build and apply it to [/r/VolunteerLiveTeam](https://reddit.com/r/VolunteerLiveTeam).
+All the source CSS is in the [sass](https://github.com/VolunteerLiveTeam/VLT-Reddit-Stylesheet/tree/dev/sass) folder. Upon a commit to the `dev` branch, Travis CI will build the CSS and apply it to [/r/VolunteerTestTeam](https://reddit.com/r/VolunteerTestTeam). Then, when the PR is merged, Travis will build and apply it to [/r/VolunteerLiveTeam](https://reddit.com/r/VolunteerLiveTeam).
 
 ## License
 
