@@ -14,7 +14,17 @@ Promise.all(IMAGES.map(slug => {
         threshold: 0.01, // 1% threshold
         imageOutputPath: `screenshot-diff-${slug}.png`
     });
-    return util.promisify(diff.run)();
+    return new Promise((resolve, reject) => {
+        diff.run((err, result) => {
+            if (err) {
+                reject(err);
+            } else {
+                console.log(diff.hasPassed(result.code) ? 'Passed' : 'Failed');
+                console.log('Found ' + result.differences + ' differences.');
+                resolve(result);
+            }
+        });
+    });
 })).then(() => {
     const urls = {};
     IMAGES.forEach(slug => urls[slug] = {before: '', after: '', diff: ''});
