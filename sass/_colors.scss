@@ -1,0 +1,21 @@
+.morelink, .side .titlebox .md h3 a, .drop-choices a.choice:hover, .submit-page #newlink.submit.content ul.tabmenu.formtab,
+.submit_text.enabled.roundfield, body .btn, body button, .content .infobar {
+    background-color: #424242;
+}
+
+.morelink:hover, .side .titlebox .md h3 a:hover, .btn:hover, body button:hover {
+    background-color: #727272;
+}
+
+.morelink:active, .side .titlebox .md h3 a:active, .btn:active, body button:active {
+    background-color: #727272;
+}
+
+.thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title, .link .entry .buttons li a.comments,
+.link .entry .buttons li a.flairselectbtn, .link .entry .buttons li a:hover, .titlebox .tagline a.flairselectbtn, .md a,
+.side .titlebox .md h4 a, .wiki-page .wiki-page-content .md.wiki h4, .sidebox.create .morelink a, a, .side:after, .usertext .bottom-area a.reddiquette,
+.wiki-page .pageactions .wikiaction-current, .tagline .submitter, .combined-search-page .search-result .search-result-header .search-title,
+.combined-search-page .search-result a, .combined-search-page .search-result a > mark, .combined-search-page .search-result .search-comments,
+.flairselector h2, .linefield .title, body .content .sitetable .link .title a:hover, .link .entry .tagline a:hover, .comment .author:hover {
+    color: #BD1F1F;
+}
