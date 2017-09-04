@@ -9,6 +9,8 @@ const before = process.argv.indexOf("before") !== -1;
   const page = await browser.newPage();
   await page.setViewport({ width: 1920, height: 1800 });
 
+  console.log([process.env.REDDIT_USERNAME, process.env.REDDIT_PASSWORD]);
+
   await page.goto("https://reddit.com/login");
   await page.focus("#user_login");
   await page.type(process.env.REDDIT_USERNAME);
@@ -27,7 +29,7 @@ const before = process.argv.indexOf("before") !== -1;
 
   for (const key of Object.keys(PAGES)) {
     const url = PAGES[key];
-    await page.goto(url);
+    await page.goto(url, { waitFor: "load" });
     await page.screenshot({
       path: `screenshot-${before ? "before" : "after"}-${key}.png`
     });
