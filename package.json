@@ -6,7 +6,9 @@
   "author": "@VolunteerLiveTeam",
   "license": "MIT",
   "dependencies": {
+    "blink-diff": "^1.0.13",
     "clean-css": "^4.1.8",
+    "imgur": "^0.2.1",
     "node-sass": "^4.5.3",
     "snoowrap": "^1.14.2"
   }
