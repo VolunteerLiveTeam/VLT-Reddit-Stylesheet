@@ -25,7 +25,8 @@ if (process.env.CI !== "true") {
 const files = child_process
   .execSync("git diff --name-only $TRAVIS_COMMIT_RANGE")
   .toString()
-  .split("\n");
+  .split("\n")
+  .filter(x => /\.(jpg|png)$/.exec(x));
 
 console.log("Running Sass...");
 let resultCss;
