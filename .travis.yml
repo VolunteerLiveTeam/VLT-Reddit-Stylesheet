@@ -3,7 +3,7 @@ dist: trusty
 node_js:
 - '8'
 cache: yarn
-before_install: ./check-if-pr.sh
+before_install: node check-if-pr.js
 # before_script: node screenshots.js before
 script: node build.js
 after_success:
