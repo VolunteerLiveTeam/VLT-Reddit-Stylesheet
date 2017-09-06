@@ -5,7 +5,8 @@ node_js:
 cache: yarn
 before_install: node check-if-pr.js
 # before_script: node screenshots.js before
-script: node build.js
+before_script: npm install -g gulp-cli
+script: gulp deploy
 after_success:
 # - node screenshots.js after
 # - node diff.js
