@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var header = require('gulp-header');
+var cleanCss = require('gulp-clean-css');
+var replace = require('gulp-replace');
 
 var isProduction = process.env.TRAVIS_BRANCH === 'master' && process.env.TRAVIS_PULL_REQUEST === 'false';
 var redeploy = null;
@@ -15,8 +17,12 @@ const CSS_HEADER = `/*
 
 gulp.task('sass', function() {
   return gulp.src('./sass/index.scss')
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCss({ level: { 1: { cleanupCharsets: false } } }, function(details) {
+      console.log(`Minified size: ${details.stats.minifiedSize} bytes (${((details.stats.minifiedSize / details.stats.originalSize) * 100).toFixed(2)}%)`);
+    }))
     .pipe(header(CSS_HEADER))
+    .pipe(replace('@charset "UTF-8";', ''))
     .pipe(gulp.dest('./build'));
 });
 
