@@ -6,8 +6,19 @@
   "author": "@VolunteerLiveTeam",
   "license": "MIT",
   "dependencies": {
+    "blink-diff": "^1.0.13",
     "clean-css": "^4.1.8",
+    "gulp-clean-css": "^3.8.0",
+    "gulp-header": "^1.8.9",
+    "gulp-replace": "^0.6.1",
+    "imgur": "^0.2.1",
     "node-sass": "^4.5.3",
+    "puppeteer": "^0.10.2",
     "snoowrap": "^1.14.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "redeploy": "^1.0.1"
   }
 }

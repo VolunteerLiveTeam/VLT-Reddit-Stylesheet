@@ -109,22 +109,23 @@
     color: #CF2F2F;
 }
 
-.thing.stickied {
+$linkflair-sticky-colors: (
+    "info": #009148,
+    "announcement": #D95D00,
+    "live": #870706,
+    "twitter": #0684BA
+);
+
+.thing.stickied, .thing.stickied .RES-keyNav-activeElement, .thing.stickied .RES-keyNav-activeElement .md-container {
     background-color: #9A2B2B !important;
 }
-.thing.stickied.linkflair-info {
-    background-color: #009148 !important;
+
+@each $name, $color in $linkflair-sticky-colors {
+    .thing.stickied.linkflair-#{$name}, .thing.stickied.linkflair-#{$name} .RES-keyNav-activeElement, .thing.stickied.linkflair-#{$name} .RES-keyNav-activeElement .md-container {
+        background-color: $color !important;
+    }
 }
-.thing.stickied.linkflair-announcement {
-    background-color: #D95D00 !important;
-}
-.thing.stickied.linkflair-live {
-    background-color: #870706 !important;
-}
-.thing.stickied.linkflair-twitter {
-    background-color: #0684BA !important;
-}
-.thing.stickied.comment, .thing.stickied .RES-keyNav-activeElement, .thing.stickied .RES-keyNav-activeElement .md-container, .thing.stickied.comment .new-comment .usertext-body, .thing.stickied.comment .usertext-body.may-blank-within.md-container {
+.thing.stickied.comment, .thing.stickied.comment .new-comment .usertext-body, .thing.stickied.comment .usertext-body.may-blank-within.md-container {
     background-color: #009148 !important;
 }
 .thing.stickied.comment .child .RES-keyNav-activeElement .md-container, .thing.stickied.comment .child .new-comment .usertext-body, .thing.stickied.comment .child .usertext-body.may-blank-within.md-container {
@@ -163,4 +164,29 @@
 
 .commentarea .menuarea .toggle a, .help-hoverable, .commentarea .menuarea span.dropdown-title.lightdrop {
     color: #363636;
+}
+
+/* --- Addon: Rotate defaul thumbnails on hover; by Michael Writhe --- */ 
+.over18.link .thumbnail, 
+.thumbnail.self, 
+.thumbnail.default {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+      transform: rotate(-10deg);
+        -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+.over18.link .thumbnail:hover, 
+.thumbnail.self:hover, 
+.thumbnail.default:hover {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
 }
