@@ -114,9 +114,10 @@
 }
 
 .thing.stickied.self .flair-com-member, .thing.stickied.link .flair-com-member {
-    display: inherit;
-    color: #CF2F2F;
+    display: inline;
+    color: white;
     font-weight: 900;
+    padding-left: 0.4rem;
 }
 
 .flair-com-member ~ span.userattrs a.moderator::after {
