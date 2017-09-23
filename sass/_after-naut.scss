@@ -121,7 +121,8 @@
 
 .flair-com-member ~ span.userattrs a.moderator::after {
     content: 'Committee Member - speaking officially';
-    color: #CF2F2F;
+    color: white;
+    padding-left: 0.6rem;
     font-weight: 900;
 }
 
