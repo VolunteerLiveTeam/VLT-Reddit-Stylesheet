@@ -119,7 +119,7 @@
     font-weight: 900;
 }
 
-.flair-com-member ~ a.moderator::after {
+.flair-com-member ~ span.userattrs a.moderator::after {
     content: 'Committee Member - speaking officially';
     color: #CF2F2F;
     font-weight: 900;
