@@ -1,4 +1,4 @@
-# VLT Reddit Stylesheet ![Travis branch](https://img.shields.io/travis/VolunteerLiveTeam/VLT-Reddit-Stylesheet/dev.svg?style=flat-square)
+# VLT Reddit Stylesheet [![Build Status](https://travis-ci.org/VolunteerLiveTeam/VLT-Reddit-Stylesheet.svg?branch=dev)](https://travis-ci.org/VolunteerLiveTeam/VLT-Reddit-Stylesheet)
 
 This repository has the stylesheet for [/r/VolunteerLiveTeam](https://reddit.com/r/VolunteerLiveTeam).
 
