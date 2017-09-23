@@ -109,6 +109,22 @@
     color: #CF2F2F;
 }
 
+.flair-com-member {
+    display: none;
+}
+
+.thing.stickied.self .flair-com-member, .thing.stickied.link .flair-com-member {
+    display: inherit;
+    color: #CF2F2F;
+    font-weight: 900;
+}
+
+.flair-com-member ~ a.moderator::after {
+    content: 'Committee Member - speaking officially';
+    color: #CF2F2F;
+    font-weight: 900;
+}
+
 $linkflair-sticky-colors: (
     "info": #009148,
     "announcement": #D95D00,
