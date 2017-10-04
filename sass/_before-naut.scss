@@ -39,14 +39,30 @@ a[title="hoverbutton"] {
     }
 }
 
+@mixin brand-logo($x-offset) {
+    &::before {
+        content: "";
+        display: inline-block;
+        background-image: url(%%logos%%);
+        background-size: cover;
+        background-position-x: $x-offset;
+        width: 32px;
+        height: 32px;
+        vertical-align: middle;
+    }
+}
+
 a[title="facebook"] {
     background-color: #3b5998 !important;
+    @include brand-logo(0);
 }
 
 a[title="twitter"] {
     background-color: #1DA1F2 !important;
+    @include brand-logo(128px);
 }
 
 a[title="discord"] {
     background-color: #7289DA !important;
+    @include brand-logo(256px);
 }
