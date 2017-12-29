@@ -59,10 +59,10 @@ a[title="facebook"] {
 
 a[title="twitter"] {
     background-color: #1DA1F2 !important;
-    @include brand-logo(128px);
+    @include brand-logo(64px);
 }
 
 a[title="discord"] {
     background-color: #7289DA !important;
-    @include brand-logo(256px);
+    @include brand-logo(128px);
 }
