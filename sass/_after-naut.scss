@@ -208,3 +208,9 @@ $linkflair-sticky-colors: (
     -ms-transform: rotate(0deg);
       transform: rotate(0deg);
 }
+
+/* Fix for embedded Live Threads */
+
+body.liveupdate-app .content {
+    margin-right: 16px;
+}
